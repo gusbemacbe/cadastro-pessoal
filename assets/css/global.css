@@ -1,0 +1,411 @@
+*
+{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:before,
+*:after
+{
+  box-sizing: inherit;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, svg, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html,
+body
+{
+  height: 100%;
+}
+
+body
+{
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--open-sans);
+}
+
+body.enviado
+{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.row
+{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--bs-gutter-x) / -2);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-top: calc(var(--bs-gutter-y) * -1);
+}
+
+.row> *
+{
+  flex-shrink: 0;
+  margin-top: var(--bs-gutter-y);
+  max-width: 100%;
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  width: 100%;
+}
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl
+{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 100%;
+}
+
+h1,
+h2,
+p
+{
+  line-height: 1.5em;
+  text-align: center;
+}
+
+h1
+{
+  color: var(--default-orange);
+}
+
+p small
+{
+  display: block;
+  padding: 20px;
+  text-align: left;
+}
+
+section
+{
+  padding: 30px;
+}
+
+section p
+{
+  font-size: 18px;
+}
+
+section img
+{
+  display: block;
+  height: 128px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+section form
+{
+  background-color: var(--light-orange);
+  border-radius: 4px;
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.group
+{
+  margin-bottom: 30px;
+}
+
+.controls
+{
+  position: relative;
+  text-align: left;
+}
+
+.controls input[type="text"],
+.controls input[type="email"],
+.controls input[type="number"],
+.controls input[type="date"],
+.controls input[type="tel"],
+.controls select,
+.controls textarea,
+.controls button
+{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--black);
+  font-family: var(--open-sans);
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 18px;
+  outline: none;
+  padding: 12px;
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+  width: 100%;
+}
+
+.controls input[type="text"]:hover,
+.controls input[type="email"]:hover,
+.controls input[type="number"]:hover,
+.controls input[type="date"]:hover,
+.controls input[type="tel"]:hover,
+.controls select:hover,
+.controls textarea:hover,
+.controls button:hover
+{
+  border: 1px solid var(--default-orange);
+}
+
+.controls select
+{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  cursor: pointer;
+}
+
+.controls label
+{
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.controls label+ input,
+.controls label+ select
+{
+  margin-top: 10px;
+}
+
+button
+{
+  background-color: var(--blue);
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  cursor: pointer;
+  float: right;
+  padding: 10px;
+  transition: transform 0.5s cubic-bezier(0.39,0.58,0.57,1),opacity 0.5s cubic-bezier(0.39,0.58,0.57,1);
+}
+
+button:hover
+{
+  background-color: var(--default-orange);
+}
+
+.clear:after
+{
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.grid:after
+{
+  clear: both;
+  content: "";
+  display: table;
+}
+
+[class*="col-"]
+{
+  float: left;
+  padding-right: 10px;
+}
+
+.grid [class*="col-"]:last-of-type
+{
+  padding-right: 0;
+}
+
+.col-1-2
+{
+  width: 50%;
+}
+
+.col-1-3
+{
+  width: 33.33%;
+}
+
+.col-1-4
+{
+  width: 25%;
+}
+
+.col-1-8
+{
+  width: 12.5%;
+}
+
+.col-2-3
+{
+  width: 66.66%;
+}
+
+.validate-input 
+{
+  position: relative;
+  padding-top: 10px;
+}
+
+.validate-input.form-field-valid-focusout::after,
+.validate-input.form-field-invalid-focusout::after 
+{
+  font-size: 28px !important;
+  right: 13px !important;
+  top: 16px !important;
+}
+
+.validate-field-error-message
+{
+  padding-bottom: 20px;
+}
+
+footer
+{
+  background-color: var(--brown);
+  color: var(--white);
+  padding: 30px;
+  text-align: center;
+}
+
+footer ul
+{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+}
+
+footer ul li
+{
+  padding-right: 20px;
+}
+
+footer ul li a
+{
+  color: var(--white);
+  text-decoration: none;
+}
+
+footer ul li a:hover
+{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.success
+{
+  background-color: var(--light-orange);
+  border-radius: 5px;
+  padding: 30px;
+  height: 100%;
+}
+
+.success img
+{
+  margin-top: 30px;
+}
+
+@media (min-width: 576px)
+{
+  .container,
+  .container-sm
+  {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px)
+{
+  .container,
+  .container-sm,
+  .container-md
+  {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px)
+{
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg
+  {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px)
+{
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl
+  {
+    max-width: 1320px;
+  }
+}
+
+@media only screen and (max-width: 990px)
+{
+}
+
+@media screen and (max-width: 768px)
+{
+  .col-1-2,
+  .col-1-4-sm,
+  .col-1-3,
+  .col-2-3
+  {
+    width: 100%;
+  }
+
+  [class*="col-"]
+  {
+    padding-right: 0;
+  }
+
+  .col-1-8
+  {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 540px)
+{
+}
+
+@media screen and (max-height: 450px)
+{
+}
